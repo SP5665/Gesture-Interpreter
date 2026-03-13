@@ -10,7 +10,6 @@ y = data.iloc[:, -1].values #selecting the last column of your CSV file.
 #X contains the information the model uses to make a prediction.
 #y contains the correct answer for each input.
 
-
 model = GestureModel() #This creates an instance of your neural network.
 
 # training loop here
