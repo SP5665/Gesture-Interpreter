@@ -11,9 +11,8 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 # Import the neural network model
 from model.gesture_model import GestureModel
 
-# Load dataset
-data = pd.read_csv("data/gestures.csv", header=None)
-
+data = pd.read_csv("data/gestures.csv", header=None) # Load dataset
+data = data.sample(frac=1).reset_index(drop=True) # Shuffle dataset to ensure random order during training.
 # Split features and labels
 X = data.iloc[:, :-1].values   # all columns except last (landmarks)
 y = data.iloc[:, -1].values    # last column (gesture label)
@@ -23,7 +22,8 @@ y = data.iloc[:, -1].values    # last column (gesture label)
 #y contains the correct answer for each input.
 
 # Convert labels (A,B,C...) → numbers (0,1,2...)
-y = pd.factorize(y)[0]
+label_map = {"A":0, "B":1, "C":2}
+y = y.map(label_map)
 
 # Convert NumPy arrays → PyTorch tensors
 X = torch.tensor(X, dtype=torch.float32)
@@ -38,7 +38,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Training loop
-for epoch in range(100):
+for epoch in range(200): # Train for 200 epochs
     outputs = model(X) #akes input data and produces predictions.
     loss = criterion(outputs, y) #Compare predicted gestures with true labels.
     optimizer.zero_grad() # Reset gradients
