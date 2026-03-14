@@ -1,85 +1,89 @@
 import cv2
 import mediapipe as mp
 import csv
-import os
 
-# Initialize MediaPipe Hand module
+# Load MediaPipe hands module
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils
 
+# Create hand detection object
 hands = mp_hands.Hands(
-    static_image_mode=False,
-    max_num_hands=1,
-    min_detection_confidence=0.7
+    static_image_mode=False,      # Use video mode
+    max_num_hands=1,              # Detect only one hand
+    min_detection_confidence=0.7  # Detection confidence
 )
 
-# Create dataset folder if it does not exist
-if not os.path.exists("../data"):
-    os.makedirs("../data")
-
-# Open CSV file to store gesture data
-file = open("../data/gestures.csv", "a", newline="")
+# Open CSV file where gesture data will be stored
+file = open("gestures.csv", "a", newline="")
 writer = csv.writer(file)
 
-# Ask user for gesture label
-label = input("Enter gesture label (A/B/C etc): ")
+# Ask user for the gesture label (example: A, B, C)
+label = input("Enter gesture label: ")
 
 # Start webcam
 cap = cv2.VideoCapture(0)
 
-print("Press 's' to save gesture data")
+print("Press 's' to save gesture")
 print("Press 'q' to quit")
 
 while True:
 
-    # Read frame from camera
+    # Capture frame from webcam
     ret, frame = cap.read()
+
     if not ret:
         break
 
-    # Flip frame horizontally (mirror view)
+    # Mirror the frame
     frame = cv2.flip(frame, 1)
 
-    # Convert BGR image to RGB for MediaPipe
+    # Convert BGR image to RGB (required for MediaPipe)
     rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-    # Process frame with MediaPipe
+    # Detect hands
     result = hands.process(rgb)
 
     landmark_list = []
 
+    # If a hand is detected
     if result.multi_hand_landmarks:
+
         for hand_landmarks in result.multi_hand_landmarks:
 
-            # Draw hand landmarks on screen
+            # Draw hand skeleton on the screen
             mp_draw.draw_landmarks(
                 frame,
                 hand_landmarks,
                 mp_hands.HAND_CONNECTIONS
             )
 
-            # Extract landmark coordinates
+            # Extract x and y coordinates of each landmark
             for lm in hand_landmarks.landmark:
                 landmark_list.append(lm.x)
                 landmark_list.append(lm.y)
 
-    # Show camera window
+    # Show webcam window
     cv2.imshow("Hand Detection", frame)
 
-    # Read keyboard input (ONLY ONCE)
-    key = cv2.waitKey(1) & 0xFF
+    # Read keyboard input
+    key = cv2.waitKey(1)
 
-    # Save gesture when 's' is pressed
+    # If 's' is pressed → save gesture
     if key == ord('s') and landmark_list:
-        landmark_list.append(label)
+        landmark_list.append(label)   # add label at end
         writer.writerow(landmark_list)
-        print("Gesture Saved")
+        print("Gesture Saved!")
 
-    # Quit program when 'q' is pressed
+    # If 'q' is pressed → exit program
     if key == ord('q'):
+        print("Program Closed")
         break
 
-# Release camera and close windows
+# Release camera
 cap.release()
+
+# Close windows
 cv2.destroyAllWindows()
+
+# Close CSV file
 file.close()
