@@ -14,7 +14,7 @@ hands = mp_hands.Hands(
 )
 
 # Open CSV file where gesture data will be stored
-file = open("gestures.csv", "a", newline="")
+file = open("../data/gestures.csv", "a", newline="")
 writer = csv.writer(file)
 
 # Ask user for the gesture label (example: A, B, C)
