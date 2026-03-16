@@ -15,7 +15,7 @@ data = pd.read_csv("data/gestures.csv", header=None) # Load dataset
 data = data.sample(frac=1).reset_index(drop=True) # Shuffle dataset to ensure random order during training.
 # Split features and labels
 X = data.iloc[:, :-1].values   # all columns except last (landmarks)
-y = data.iloc[:, -1].values    # last column (gesture label)
+y = data.iloc[:, -1].values   # last column (gesture label)
 
 #iloc selects data by position.
 #X contains the information the model uses to make a prediction.
