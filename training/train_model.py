@@ -22,7 +22,7 @@ y = data.iloc[:, -1].values   # last column (gesture label)
 #y contains the correct answer for each input.
 
 # Convert labels (A,B,C...) → numbers (0,1,2...)
-label_map = {"A":0, "B":1, "C":2}
+label_map = {"A":0, "B":1, "C":2, "D":3, "E":4, "F":5}
 y = y.map(label_map)
 
 # Convert NumPy arrays → PyTorch tensors

@@ -15,7 +15,7 @@ model.load_state_dict(torch.load("saved_models/gesture_model.pth"))
 model.eval() #tells pytorch we are predicting, not training
 
 # gesture labels
-labels = ["A","B","C"]
+labels = ["A","B","C","D","E","F"]
 
 mp_hands = mp.solutions.hands
 mp_draw = mp.solutions.drawing_utils

@@ -40,7 +40,7 @@ print("Saving data to:", csv_path)
 # Step 3: Ask user for gesture label
 # -------------------------------
 
-label = input("Enter gesture label (A/B/C etc): ")
+label = input("Enter gesture label (A/B/C/D/E/F etc): ")
 
 # -------------------------------
 # Step 4: Start webcam
