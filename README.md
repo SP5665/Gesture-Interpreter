@@ -20,23 +20,6 @@ NumPy – Used for numerical computations and handling arrays. <br><br>
 5. The model predicts the gesture label. <br>
 6. The predicted gesture is displayed on the screen in real time. <br><br>
 
-## Project Folder Structure <br>
-
-Gesture-Interpreter <br>
-│ <br>
-├── model <br>
-│ └── gesture_model.py <br>
-│ <br>
-├── realtime <br>
-│ └── predict_gesture.py <br>
-│ <br>
-├── saved_models <br>
-│ └── gesture_model.pth <br>
-│ <br>
-├── dataset <br>
-│ <br>
-└── README.md <br><br>
-
 ## Installation Steps <br>
 
 ### Step 1 – Clone the repository <br>
@@ -92,63 +75,6 @@ When the program runs: <br>
 • The predicted gesture will appear on the screen. <br><br>
 
 Press **Q** on the keyboard to stop the program and close the webcam window. <br><br>
-
-## Git Commands Used in This Project <br>
-
-### Initialize Git Repository <br>
-
-Command: <br>
-
-```
-git init
-```
-
-Explanation: <br>
-This command initializes a Git repository in the project folder so version control can be used. <br><br>
-
-### Add Files to Git <br>
-
-Command: <br>
-
-```
-git add .
-```
-
-Explanation: <br>
-The `git add .` command adds all files in the project folder to the staging area so they can be committed. <br><br>
-
-### Commit Changes <br>
-
-Command: <br>
-
-```
-git commit -m "Initial project commit"
-```
-
-Explanation: <br>
-A commit saves a snapshot of the current project files in Git with a message describing the changes. <br><br>
-
-### Connect to GitHub Repository <br>
-
-Command: <br>
-
-```
-git remote add origin https://github.com/YOUR_USERNAME/Gesture-Interpreter.git
-```
-
-Explanation: <br>
-This command connects your local Git project to a remote repository on GitHub. <br><br>
-
-### Push Code to GitHub <br>
-
-Command: <br>
-
-```
-git push -u origin main
-```
-
-Explanation: <br>
-The `git push` command uploads your local project files to GitHub so they are stored online and can be shared with others. <br><br>
 
 ## Future Improvements <br>
 
