@@ -1,7 +1,8 @@
 streamlit
 torch
 opencv-python
-mediapipe
+mediapipe==0.10.11
 streamlit-webrtc
 av
 numpy
+# python version: 3.11

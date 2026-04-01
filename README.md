@@ -27,6 +27,12 @@ NumPy – Used for numerical computations and handling arrays. <br><br>
 • Convert gestures into text or speech output. <br>
 • Deploy the project as a web or mobile application. <br><br>
 
+## Running file
+
+- clone this repository
+- install the required dependencies and libraries
+- in the terminal, run 'streamline run app.py'
+
 ## Collaborators <br>
 
 Srajal Sahu <br>
