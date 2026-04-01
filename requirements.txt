@@ -1,5 +1,7 @@
-python
-pandas
-opencv
+streamlit
+torch
+opencv-python
 mediapipe
-pytorch
+streamlit-webrtc
+av
+numpy
