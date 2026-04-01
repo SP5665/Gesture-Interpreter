@@ -5,4 +5,3 @@ mediapipe
 streamlit-webrtc
 av
 numpy
-python-3.11
