@@ -20,62 +20,6 @@ NumPy – Used for numerical computations and handling arrays. <br><br>
 5. The model predicts the gesture label. <br>
 6. The predicted gesture is displayed on the screen in real time. <br><br>
 
-## Installation Steps <br>
-
-### Step 1 – Clone the repository <br>
-
-Command used: <br>
-
-```
-git clone https://github.com/YOUR_USERNAME/Gesture-Interpreter.git
-```
-
-Explanation: <br>
-The `git clone` command downloads the project from GitHub to your local computer so you can run and modify the code. <br><br>
-
-### Step 2 – Navigate to the project folder <br>
-
-Command used: <br>
-
-```
-cd Gesture-Interpreter
-```
-
-Explanation: <br>
-The `cd` command means "change directory". It moves the terminal into the project folder so that commands can be executed inside the project. <br><br>
-
-### Step 3 – Install required libraries <br>
-
-Command used: <br>
-
-```
-pip install torch opencv-python mediapipe numpy
-```
-
-Explanation: <br>
-The `pip install` command installs the required Python libraries needed to run the project. <br>
-Torch installs the deep learning framework, OpenCV allows webcam access, MediaPipe detects hand landmarks, and NumPy helps with numerical data processing. <br><br>
-
-## Running the Project <br>
-
-Command used: <br>
-
-```
-python realtime/predict_gesture.py
-```
-
-Explanation: <br>
-This command runs the main Python script that opens the webcam and starts real-time gesture recognition. <br><br>
-
-When the program runs: <br>
-
-• The webcam will open automatically. <br>
-• Your hand will be detected using MediaPipe. <br>
-• The trained model will predict the gesture. <br>
-• The predicted gesture will appear on the screen. <br><br>
-
-Press **Q** on the keyboard to stop the program and close the webcam window. <br><br>
-
 ## Future Improvements <br>
 
 • Add support for more gestures. <br>

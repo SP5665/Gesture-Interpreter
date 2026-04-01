@@ -1,7 +1,8 @@
 streamlit
 torch
-opencv-python
+opencv-python-headless
 mediapipe
 streamlit-webrtc
 av
 numpy
+python-3.11
