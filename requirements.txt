@@ -1,9 +1,7 @@
-# for streamlit cloud deployment
-
-streamlit==1.32.0
+streamlit
 torch
-opencv-python-headless==4.9.0.80
-mediapipe==0.10.9
-streamlit-webrtc==0.47.1
-av==10.0.0
-numpy==1.26.4
+opencv-python
+mediapipe
+streamlit-webrtc
+av
+numpy
