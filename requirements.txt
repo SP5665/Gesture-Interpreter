@@ -1,7 +1,7 @@
 streamlit
 torch
-opencv-python-headless
-mediapipe==0.10.11
+opencv-python-headless # for streamlit-webrtc compatibility
+mediapipe==0.10.9 # for streamlit-webrtc compatibility (code uses 0.10.11)
 streamlit-webrtc
 av
 numpy
