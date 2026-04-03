@@ -31,7 +31,7 @@ NumPy – Used for numerical computations and handling arrays. <br><br>
 
 - clone this repository
 - install the required dependencies and libraries
-- in the terminal, run 'streamline run app.py'
+- in the terminal, run 'streamlit run app.py'
 
 ## Collaborators <br>
 
