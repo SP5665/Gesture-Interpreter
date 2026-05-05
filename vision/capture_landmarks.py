@@ -3,6 +3,7 @@ import mediapipe as mp
 import csv
 import os
 
+
 # -------------------------------
 # Step 1: Setup MediaPipe Hands
 # -------------------------------
