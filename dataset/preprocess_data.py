@@ -3,6 +3,7 @@ import pandas as pd
 # Load dataset from CSV file
 data = pd.read_csv("../data/gestures.csv", header=None)
 
+
 # Print number of rows and columns
 print("Dataset shape:", data.shape)
 
